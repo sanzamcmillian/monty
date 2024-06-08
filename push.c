@@ -7,7 +7,7 @@
  *Return: nothing
  */
 
-void f_push(stack **head, unsigned int counter)
+void f_push(stack_t **head, unsigned int counter)
 {
 	int n, j = 0, flag = 0;
 
@@ -24,7 +24,7 @@ void f_push(stack **head, unsigned int counter)
 		{
 			fprint(stderr, "L%d: usage: push  integer\n", counter);
 			fclose(bus.file);
-			free(bust.content);
+			free(bus.content);
 			free_stack(*head);
 			exit(EXIT_FAILURE);
 		}
@@ -33,6 +33,7 @@ void f_push(stack **head, unsigned int counter)
 			fprint(stderr, "L%d: usage: push integer\n", counter);
 			fclose(bus.file);
 			free(bus.content);
+			free_stack(*head);
 			exit(EXIT_FAILURE);
 		}
 		n = atoi(bus.arg);
